@@ -1,2 +1,3 @@
-https://github.com/kylefritz/flynn-buildpack-jtier
+https://github.com/kylefritz/metrics-aggregator-buildpack
+https://github.com/kylefritz/splunk-universal-forwarder-buildpack
 https://github.com/heroku/heroku-buildpack-ruby
