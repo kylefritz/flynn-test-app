@@ -1,14 +1,14 @@
 #!/bin/sh
 
-echo "these are the best words"
+# start splunk
+splunk start --accept-license
+touch $HOME/$SPLUNK_LOG_FILE
+splunk add forward-server $SPLUNK_INDEXER -auth admin:changeme
+splunk add monitor $HOME/$SPLUNK_LOG_FILE  -auth admin:changeme
+echo "goapi_jtier_splunk_agent_started" >> $HOME/$SPLUNK_LOG_FILE
 
-mkdir -p logs
-touch logs/great.log
-echo "something" >> logs/great.log
+# start metrics daemon
 
-export GREAT_VAR=thing
-
-ruby side_gig.rb &
 
 
 bundle exec rackup -p $PORT config.ru
