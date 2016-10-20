@@ -1,1 +1,1 @@
-web: adsf -p $PORT
+web: bundle exec rackup -p $PORT config.ru
