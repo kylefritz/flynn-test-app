@@ -5,5 +5,9 @@ get '/' do
   
   "GREAT_VAR=#{ENV['GREAT_VAR']}
   files=
-  #{files}"
+  #{files}
+  
+  myfile.out=
+  #{`tail myfile.out`}
+  "
 end
